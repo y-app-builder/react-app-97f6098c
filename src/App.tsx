@@ -11,6 +11,10 @@ const App: React.FC = () => {
     setCount(0);
   };
 
+  const decrementCount = (): void => {
+    setCount(prevCount => Math.max(0, prevCount - 1));
+  };
+
   return (
     <div style={{ 
       display: 'flex', 
@@ -33,6 +37,20 @@ const App: React.FC = () => {
         {count}
       </div>
       <div style={{ display: 'flex', gap: '1rem' }}>
+        <button 
+          onClick={decrementCount}
+          style={{
+            padding: '0.75rem 1.5rem',
+            fontSize: '1rem',
+            backgroundColor: '#2196F3',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          Decrement
+        </button>
         <button 
           onClick={incrementCount}
           style={{
